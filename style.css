@@ -1,0 +1,270 @@
+:root {
+    --p-main: #9d4edd; /* Púrpura principal */
+    --p-glow: #c77dff; /* Púrpura brillante */
+    --bg-dark: #030303; /* Fondo casi negro */
+    --text-main: #e0e0e0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark);
+    font-family: 'Michroma', sans-serif; /* Fuente futurista opcional (ver HTML) */
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* El contenedor del fondo animado */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Detrás de todo */
+}
+
+/* El contenido principal, encima de las partículas */
+.content-wrapper {
+    position: relative;
+    z-index: 2; /* Encima de las partículas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+.logo-img {
+    width: 260px;
+    filter: drop-shadow(0 0 25px var(--p-main));
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 35px var(--p-glow));
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    margin: 20px 0 10px;
+    text-shadow: 0 0 15px var(--p-main), 0 0 5px white;
+}
+
+.tagline {
+    color: var(--p-glow);
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Secciones más elaboradas */
+.main-info {
+    max-width: 900px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 30px;
+    text-decoration: underline;
+    text-decoration-color: var(--p-main);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.card {
+    background: rgba(18, 18, 18, 0.6); /* Semi-transparente para ver el fondo */
+    border: 1px solid rgba(157, 78, 221, 0.2);
+    padding: 30px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px); /* Efecto cristal esmerilado */
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: var(--p-glow);
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.3);
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: white;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.card p {
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+/* Botón Neón */
+.btn-neon {
+    display: inline-block;
+    padding: 15px 40px;
+    margin-top: 20px;
+    color: var(--p-glow);
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid var(--p-glow);
+    border-radius: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(199, 125, 255, 0.3);
+}
+
+.btn-neon:hover {
+    background: var(--p-glow);
+    color: white;
+    box-shadow: 0 0 30px var(--p-glow);
+}
+
+footer {
+    margin-top: auto;
+    padding: 40px;
+    text-align: center;
+    color: #666;
+    font-size: 0.8rem;
+}
+.news-section {
+    width: 100%;
+    max-width: 900px;
+    padding: 60px 20px;
+    z-index: 2;
+}
+
+.news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.news-card {
+    display: flex;
+    background: rgba(20, 20, 20, 0.7);
+    border-left: 4px solid var(--p-main);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.news-card:hover {
+    background: rgba(40, 40, 40, 0.8);
+    transform: translateX(10px);
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.2);
+}
+
+.news-date {
+    background: var(--p-main);
+    color: white;
+    padding: 20px;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.news-content {
+    padding: 20px;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.news-content h3 {
+    margin: 0 0 10px 0;
+    color: var(--p-glow);
+    font-size: 1.2rem;
+}
+
+.news-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.status-tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    background: #222;
+    padding: 2px 8px;
+    border: 1px solid #444;
+    color: var(--p-glow);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .news-card { flex-direction: column; }
+    .news-date { padding: 10px; }
+}
+
+/* Juego de trivia*/
+.trivia-section {
+    padding: 60px 20px;
+    max-width: 600px;
+    margin: auto;
+    z-index: 2;
+}
+
+#trivia-container {
+    background: rgba(15, 15, 15, 0.9);
+    border: 2px solid var(--p-main);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
+}
+
+.trivia-btn {
+    display: block;
+    width: 100%;
+    background: transparent;
+    color: white;
+    border: 1px solid var(--p-glow);
+    padding: 12px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-family: 'Michroma', sans-serif;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.trivia-btn:hover {
+    background: var(--p-main);
+    box-shadow: 0 0 10px var(--p-glow);
+}
+
+.rank-text {
+    color: var(--p-glow);
+    text-shadow: 0 0 10px var(--p-main);
+    letter-spacing: 3px;
+    margin: 20px 0;
+}
+
+.result-box {
+    text-align: center;
+    animation: flicker 0.5s ease-in;
+}
