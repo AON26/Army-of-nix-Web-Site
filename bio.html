@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio | Army of Nix</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --p-main: #9d4edd;
+            --p-glow: #c77dff;
+            --bg: #050505;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Michroma', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        /* Animación del Logo */
+        .bio-logo {
+            width: 100px;
+            border-radius: 50%;
+            border: 2px solid var(--p-main);
+            box-shadow: 0 0 20px var(--p-main);
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 20px var(--p-main); }
+            50% { transform: scale(1.05); box-shadow: 0 0 35px var(--p-glow); }
+            100% { transform: scale(1); box-shadow: 0 0 20px var(--p-main); }
+        }
+
+        /* Efecto Glitch para el nombre */
+        .glitch {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                        -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+                        0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+            animation: glitch 500ms infinite;
+            margin-bottom: 30px;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 #ff00ff, -0.05em -0.025em 0 #00ffff, 0.025em 0.05em 0 #ffff00; }
+            14% { text-shadow: 0.05em 0 0 #ff00ff, -0.05em -0.025em 0 #00ffff, 0.025em 0.05em 0 #ffff00; }
+            15% { text-shadow: -0.05em -0.025em 0 #ff00ff, 0.025em 0.025em 0 #00ffff, -0.05em -0.05em 0 #ffff00; }
+            49% { text-shadow: -0.05em -0.025em 0 #ff00ff, 0.025em 0.025em 0 #00ffff, -0.05em -0.05em 0 #ffff00; }
+            50% { text-shadow: 0.025em 0.05em 0 #ff00ff, 0.05em 0 0 #00ffff, 0 -0.05em 0 #ffff00; }
+            99% { text-shadow: 0.025em 0.05em 0 #ff00ff, 0.05em 0 0 #00ffff, 0 -0.05em 0 #ffff00; }
+            100% { text-shadow: -0.025em 0 0 #ff00ff, -0.025em -0.025em 0 #00ffff, -0.025em -0.05em 0 #ffff00; }
+        }
+
+        /* Contenedor de enlaces */
+        .links-container {
+            width: 100%;
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .bio-link {
+            text-decoration: none;
+            color: white;
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid var(--p-main);
+            padding: 14px;
+            text-align: center;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: 0.3s all;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bio-link:hover {
+            background: var(--p-main);
+            box-shadow: 0 0 15px var(--p-glow);
+            transform: translateY(-3px);
+        }
+
+        /* Línea de escaneo animada de fondo */
+        .scanline {
+            width: 100%; height: 100px;
+            z-index: -1;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(157, 78, 221, 0.1) 50%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            animation: scanline 6s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -100px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="scanline"></div>
+    <img src="logo.png" alt="Army of Nix" class="bio-logo">
+    <div class="glitch">ARMY OF NIX</div>
+
+    <div class="links-container">
+        <a href="index.html" class="bio-link">🌐 MAIN TERMINAL</a>
+        <a href="https://github.com/AON26/AON-." target="_blank" class="bio-link">💻 GITHUB REPOS</a>
+        <a href="https://www.linkedin.com/company/army-of-nix/" target="_blank" class="bio-link">👔 PROFESIONAL PROFILE</a>
+        <a href="#" class="bio-link">🎯 BUG BOUNTY REPORTS</a>
+        <a href="mailto:armyofnix@gmail.com" class="bio-link">📧 CONTACT OPERATIVE</a>
+    </div>
+
+    <p style="font-size: 0.6rem; color: #444; margin-top: 40px; letter-spacing: 2px;">SECURE. ANALYZE. REPORT.</p>
+</body>
+</html>

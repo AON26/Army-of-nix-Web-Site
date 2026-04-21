@@ -268,3 +268,33 @@ footer {
     text-align: center;
     animation: flicker 0.5s ease-in;
 }
+
+/* Css  de BIOLINK*/
+
+.floating-bio-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--p-main);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 0 15px var(--p-glow);
+    z-index: 999;
+    transition: 0.3s;
+    border: 2px solid white;
+}
+
+.floating-bio-btn:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 0 25px var(--p-glow);
+}
+
+.floating-bio-btn img {
+    width: 35px;
+    filter: brightness(0) invert(1); /* Hace que el icono sea blanco */
+}
